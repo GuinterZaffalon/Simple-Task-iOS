@@ -9,14 +9,28 @@ import SwiftUI
 
 struct SheetView: View {
     
+    @State var task: String = ""
+    @State var description: String = ""
+    
     var body: some View {
         VStack{
-            HStack{
                 Text("Qual sua tarefa?")
                     .font(.title)
                     .padding()
                 
+            VStack{
+                TextField("Tarefa:", text: $task)
+                    .background(.thinMaterial, in:.rect(cornerRadius: 12))
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                
+                TextField("Descrição:", text: $description, axis: .vertical)
+                    .background(.thinMaterial)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+
             }
+            
             
             .padding()
             

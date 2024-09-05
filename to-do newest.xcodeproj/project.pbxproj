@@ -103,10 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				CC2FA66E2C8654AA00D109A4 /* to_do_newestApp.swift */,
-				CC2FA6982C86574A00D109A4 /* TaskView.swift */,
+				CC2FA69E2C8685C000D109A4 /* SheetView.swift */,
 				CC2FA69C2C865AA200D109A4 /* SplashIcon.swift */,
 				CC2FA69A2C8657E700D109A4 /* TimeLineView.swift */,
-				CC2FA69E2C8685C000D109A4 /* SheetView.swift */,
+				CC2FA6982C86574A00D109A4 /* TaskView.swift */,
 				CC2FA6A02C86874400D109A4 /* SheetViewModel.swift */,
 				CC2FA6722C8654AB00D109A4 /* Assets.xcassets */,
 				CC2FA6742C8654AB00D109A4 /* Preview Content */,

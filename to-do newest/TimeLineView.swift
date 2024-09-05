@@ -19,7 +19,8 @@ struct TimeLineView: View {
         TDModel(title: "Organizar a semana",
                 details: "Organizar o que vai ser feito na semana de desenvolvimento", isComplete: false),
         TDModel(title: "Review about iOS 12", details: "Estudar a disponibilidade do iOS 12", isComplete: false),
-        TDModel(title: "Organizar apresentação!", details: "Organizar a apresentação de sustentabilidade", isComplete: false)
+        TDModel(title: "Organizar apresentação!", details: "Organizar a apresentação de sustentabilidade", isComplete: false),
+        TDModel(title: "Organizar apresentação!", details: "Organizar a apresentação de sustentabilidade", isComplete: true)
     ]
     var body: some View {
         ScrollView {

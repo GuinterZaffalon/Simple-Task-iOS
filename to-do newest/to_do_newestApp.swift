@@ -10,7 +10,7 @@ import SwiftUI
 struct to_do_newestApp: App {
     var body: some Scene {
         WindowGroup {
-            TimeLineView()
+            SplashIcon()
         }
     }
 }
