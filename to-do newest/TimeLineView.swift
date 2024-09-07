@@ -15,15 +15,13 @@ struct TDModel: Identifiable {
 
 struct TimeLineView: View {
     @StateObject private var viewModel = SheetViewModel()
-    @State var items: [TDModel] = [
-        TDModel(title: "Organizar a semana",
-                details: "Organizar o que vai ser feito na semana de desenvolvimento", isComplete: false),
-        TDModel(title: "Review about iOS 12", details: "Estudar a disponibilidade do iOS 12", isComplete: false),
-        TDModel(title: "Organizar apresentação!", details: "Organizar a apresentação de sustentabilidade", isComplete: false),
-        TDModel(title: "Organizar apresentação!", details: "Organizar a apresentação de sustentabilidade", isComplete: true)
-    ]
+    @State var items: [TDModel] = []
     var body: some View {
         ScrollView {
+            
+            Text("Simple Task")
+                .font(.title)
+            
             VStack(spacing:20){
                 ForEach(items.indices, id: \.self) { item in
                     TaskView(items: items[item])
@@ -34,7 +32,6 @@ struct TimeLineView: View {
                                     .frame(maxHeight:items[item].isComplete ? geo.size.height - 5 : 0)
                                     .offset(y: 23)
                                     .padding(.leading,12)
-                                
                             }
                         })
                         .onTapGesture{
@@ -44,11 +41,12 @@ struct TimeLineView: View {
                         }
                 }
                 HStack{
-                    Image(systemName:items.allSatisfy{$0.isComplete} ? "checkmark.circle.fill" : "circle")
+                    Image(systemName:!items.isEmpty && items.allSatisfy { $0.isComplete
+                    } ? "checkmark.circle.fill" : "circle")
                     Text("Finish!")
                     Spacer()
                 }
-                .foregroundStyle(items.allSatisfy{$0.isComplete} ? .green : .gray)
+                .foregroundStyle(!items.isEmpty && items.allSatisfy{$0.isComplete} ? .green : .gray)
                 .font(.title2)
                 .onTapGesture {
                     toggleItems()
@@ -65,11 +63,10 @@ struct TimeLineView: View {
                     viewModel.showSheet()
                 }
         }
-        .sheet(isPresented: $viewModel.isSheetPresented){
-            SheetView()
-                .presentationDetents([.medium])
-                .presentationDragIndicator(.visible)
-        }
+        .sheet(isPresented: $viewModel.isSheetPresented) {
+                    SheetView(items: $items)
+                        .presentationDetents([.medium])
+                        .presentationDragIndicator(.visible)        }
         
         .safeAreaPadding()
     }

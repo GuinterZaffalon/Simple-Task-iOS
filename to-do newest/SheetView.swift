@@ -8,27 +8,37 @@
 import SwiftUI
 
 struct SheetView: View {
+    @Binding var items: [TDModel]
+    @Environment(\.dismiss) var dismiss;
     
-    @State var task: String = ""
-    @State var description: String = ""
+    @State private var newTitle: String = ""
+    @State private var newDetails: String = ""
+    @State private var newIsComplete: Bool = false
     
     var body: some View {
         VStack{
                 Text("Qual sua tarefa?")
                     .font(.title)
                     .padding()
+                    .ignoresSafeArea()
                 
             VStack{
-                TextField("Tarefa:", text: $task)
+                TextField("Tarefa:", text: $newTitle)
                     .background(.thinMaterial, in:.rect(cornerRadius: 12))
                     .textFieldStyle(.roundedBorder)
                     .padding()
                 
-                TextField("Descrição:", text: $description, axis: .vertical)
+                TextField("Descrição:", text: $newDetails, axis: .vertical)
                     .background(.thinMaterial)
                     .textFieldStyle(.roundedBorder)
                     .padding()
-
+                
+                Button("Adicionar") {
+                    addItem()
+                    dismiss()
+                }
+                .padding()
+                .buttonStyle(.bordered)
             }
             
             
@@ -39,5 +49,12 @@ struct SheetView: View {
         .frame(maxWidth:.infinity)
         .background(Color(.systemBackground))
         .cornerRadius(20)
+    }
+    
+    private func addItem() {
+        let newItem = TDModel(title: newTitle, details: newDetails, isComplete: newIsComplete)
+        if (!newTitle.isEmpty) {
+            items.append(newItem)
+        }
     }
 }
