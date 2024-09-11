@@ -11,9 +11,9 @@ struct SheetView: View {
     @Binding var items: [TDModel]
     @Environment(\.dismiss) var dismiss;
     
-    @State private var newTitle: String = ""
-    @State private var newDetails: String = ""
-    @State private var newIsComplete: Bool = false
+    @AppStorage ("TitleKey") private var newTitle: String = ""
+    @AppStorage ("DetailsKey") private var newDetails: String = ""
+    @AppStorage ("isCompleteKey") private var newIsComplete: Bool = false
     
     var body: some View {
         VStack{
