@@ -17,8 +17,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC2FA66A2C8654AA00D109A4"
                BuildableName = "Simple Task.app"
-               BlueprintName = "to-do newest"
-               ReferencedContainer = "container:to-do newest.xcodeproj">
+               BlueprintName = "Simple_Task"
+               ReferencedContainer = "container:Simple_Task.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -41,9 +41,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC2FA67A2C8654AB00D109A4"
-               BuildableName = "to-do newestTests.xctest"
-               BlueprintName = "to-do newestTests"
-               ReferencedContainer = "container:to-do newest.xcodeproj">
+               BuildableName = "Simple_TaskTests.xctest"
+               BlueprintName = "Simple_TaskTests"
+               ReferencedContainer = "container:Simple_Task.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -52,9 +52,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC2FA6842C8654AB00D109A4"
-               BuildableName = "to-do newestUITests.xctest"
-               BlueprintName = "to-do newestUITests"
-               ReferencedContainer = "container:to-do newest.xcodeproj">
+               BuildableName = "Simple_TaskUITests.xctest"
+               BlueprintName = "Simple_TaskUITests"
+               ReferencedContainer = "container:Simple_Task.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -75,8 +75,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC2FA66A2C8654AA00D109A4"
             BuildableName = "Simple Task.app"
-            BlueprintName = "to-do newest"
-            ReferencedContainer = "container:to-do newest.xcodeproj">
+            BlueprintName = "Simple_Task"
+            ReferencedContainer = "container:Simple_Task.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -92,8 +92,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC2FA66A2C8654AA00D109A4"
             BuildableName = "Simple Task.app"
-            BlueprintName = "to-do newest"
-            ReferencedContainer = "container:to-do newest.xcodeproj">
+            BlueprintName = "Simple_Task"
+            ReferencedContainer = "container:Simple_Task.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
