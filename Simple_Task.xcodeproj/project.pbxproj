@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC10D9052CA8652E00D1C94A /* editTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC10D9042CA8652E00D1C94A /* editTaskView.swift */; };
 		CC2FA66F2C8654AA00D109A4 /* to_do_newestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2FA66E2C8654AA00D109A4 /* to_do_newestApp.swift */; };
 		CC2FA6732C8654AB00D109A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2FA6722C8654AB00D109A4 /* Assets.xcassets */; };
 		CC2FA6762C8654AB00D109A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2FA6752C8654AB00D109A4 /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC10D9042CA8652E00D1C94A /* editTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTaskView.swift; sourceTree = "<group>"; };
 		CC2FA66B2C8654AA00D109A4 /* Simple Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2FA66E2C8654AA00D109A4 /* to_do_newestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_do_newestApp.swift; sourceTree = "<group>"; };
 		CC2FA6722C8654AB00D109A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				CC2FA6982C86574A00D109A4 /* TaskView.swift */,
 				CC2FA6A02C86874400D109A4 /* SheetViewModel.swift */,
 				CC5536872C98D2A60051DE1C /* ListTaskView.swift */,
+				CC10D9042CA8652E00D1C94A /* editTaskView.swift */,
 				CC2FA6722C8654AB00D109A4 /* Assets.xcassets */,
 				CC2FA6742C8654AB00D109A4 /* Preview Content */,
 			);
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2FA6A12C86874400D109A4 /* SheetViewModel.swift in Sources */,
+				CC10D9052CA8652E00D1C94A /* editTaskView.swift in Sources */,
 				CC2FA69B2C8657E700D109A4 /* TimeLineView.swift in Sources */,
 				CC2FA6992C86574A00D109A4 /* TaskView.swift in Sources */,
 				CC2FA69F2C8685C000D109A4 /* SheetView.swift in Sources */,

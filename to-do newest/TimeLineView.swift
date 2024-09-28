@@ -11,13 +11,18 @@ struct TDModel: Identifiable, Codable {
     var title: String;
     var details: String;
     var isComplete: Bool;
+    
 }
 
 struct TimeLineView: View {
     @AppStorage("ItemsKey") private var storedItemsData: Data = Data()
-    @State private var isSheetPresented: Bool = false
+    @State var isSheetPresented: Bool = false
+    @State var isSheetPresentedEdit: Bool = false
     @State var items: [TDModel] = []
-
+    @State var showingActionSheet = false
+    @State var selectedItem: TDModel?
+    @State var isEditing: Bool = false
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -30,20 +35,20 @@ struct TimeLineView: View {
 
 
             ScrollView {
-                
-                VStack{
-                    if items.isEmpty {
-                        Text("Nenhuma tarefa por aqui! \n Que tal começar criando uma?")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                    } else {
-                        ItemsView(items: $items, saveItems: saveItems)
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            }
+                            VStack {
+                                if items.isEmpty {
+                                    Text("Nenhuma tarefa por aqui! \n Que tal começar criando uma?")
+                                        .font(.title2)
+                                        .foregroundColor(.gray)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
+                                } else {
+                                    ItemsView(items: $items, saveItems: saveItems, selectedItem: $selectedItem, showingActionSheet: $showingActionSheet, isSheetPresentedEdit: $isSheetPresentedEdit, isEditing: $isEditing)
+                                        }
+                                    }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        }
+                        
             .padding()
 
             HStack {
