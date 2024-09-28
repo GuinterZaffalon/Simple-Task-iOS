@@ -11,11 +11,11 @@ struct ItemsView: View {
                     TaskView(items: items[item])
                         .background(alignment: .topLeading) {
                             GeometryReader { geo in
-                                Rectangle()
-                                    .frame(width: 2)
-                                    .frame(maxHeight: items[item].isComplete ? geo.size.height - 5 : 0)
-                                    .offset(y: 23)
-                                    .padding(.leading, 12)
+                                    Rectangle()
+                                        .frame(width: 2)
+                                        .frame(maxHeight: items[item].isComplete ? geo.size.height - 5 : 0)
+                                        .offset(y: 23)
+                                        .padding(.leading, 12)
                             }
                         }
                         .onTapGesture {
@@ -23,6 +23,9 @@ struct ItemsView: View {
                                 items[item].isComplete.toggle()
                                 saveItems()
                             }
+                        }
+                        .onLongPressGesture (minimumDuration: 0.1){
+                            //agora a lógica aqui chefe!
                         }
                         .padding(.leading, 8)
                 }
