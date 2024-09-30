@@ -51,8 +51,8 @@ struct ItemsView: View {
             }
             .sheet(isPresented: $isSheetPresentedEdit) {
                 if let selectedItem = selectedItem {
-                    if isEditing {
-                    EditTaskView(item: $items[items.firstIndex(where: { $0.id == selectedItem.id })!], isEditing: $isEditing)
+                    if isEditing == true {
+                        EditTaskView(item: $items[items.firstIndex(where: { $0.id == selectedItem.id })!], isEditing: $isEditing, isSheetPresentedEdit: $isSheetPresentedEdit)
                     }
                 }
             }
@@ -73,10 +73,6 @@ struct ItemsView: View {
     func toggleItems() {
         let allTrue = items.allSatisfy({ $0.isComplete })
         updateItemsSequentially(makeTrue: !allTrue, reverse: allTrue)
-    }
-    
-    func editItems() {
-        //var taskEdit
     }
     
     func updateItemsSequentially(makeTrue: Bool, reverse: Bool) {

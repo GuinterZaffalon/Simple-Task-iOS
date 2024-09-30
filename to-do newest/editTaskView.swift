@@ -12,6 +12,7 @@ struct EditTaskView: View {
     @Binding var isEditing: Bool
     @State private var title: String = ""
     @State private var details: String = ""
+    @Binding var isSheetPresentedEdit: Bool
     
     var body: some View {
         NavigationView{
@@ -25,6 +26,7 @@ struct EditTaskView: View {
             .navigationBarItems(
                 leading: Button("Cancelar"){
                     isEditing = false
+                    isSheetPresentedEdit = false
                 },
                 trailing: Button("Salvar") {
                     SaveTask()
@@ -41,5 +43,6 @@ struct EditTaskView: View {
         item.title = title
         item.details = details
         isEditing = false
+        isSheetPresentedEdit = false
     }
 }
